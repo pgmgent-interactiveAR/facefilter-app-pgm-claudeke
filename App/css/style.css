@@ -1,22 +1,63 @@
+@font-face {
+    font-family:'Montserrat Black';
+    src: url('../assets/fonts/Montserrat\ Black.woff2') format('woff2'),
+		url('../assets/fonts/Montserrat\ Black.woff2') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-2044;
+}
+
+@font-face {
+    font-family:'Montserrat';
+    src: url('../assets/fonts/Montserrat\ Regular.woff2') format('woff2'),
+		url('../assets/fonts/Montserrat\ Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-2044;
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
+
+:root {
+
+    --color-01: #d90000;
+    --color-02: #00ab30;
+    --color-03: #FFF;
+}
+
+.hide {
+    display: none;
+}
+
+/* SPLASH */
 
 .splash {
     height: 100vh;
-    background-color: #F27F1B;
+    width: 100vw;
+    overflow: hidden;
+
+    background-color: var(--color-01);
     
     font-size: 1.2rem;
-    color: #FFFF;
+    color: var(--color-03);
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
+
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .splash--hide {
@@ -24,44 +65,82 @@
 }
 
 .filters {
+    height: 100vh;
+    width: 100vw;
+    z-index: 0;
+}
 
+.scene {
+    height: 10rem;
+    width: 10rem;
 }
 
 .filters--hide {
     display: none;
 }
 
+/* BUTTONS */
 .btn {
-    border: none;
-    padding: 0.8rem 1rem;
+    font-family: 'Montserrat Black';
     font-size: 1rem;
+    color: var(--color-03);
 
-    color: #FFFF;
+    border: none;
     border-radius: 0.5rem;
-    background-color: #D93E30;
+    padding: 0.2rem 0.5rem;
+    background-color: var(--color-02);
+    border: var(--color-03) solid 0.2rem;
+}
+
+.btns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .btn--start {
     text-transform: uppercase;
+    font-size: 2rem;
+    border-radius: 10rem;
+    padding: 1rem 2rem;
+    border: var(--color-03) solid 0.4rem;
 }
 
-.btn--show-fltrs {
+.btn--up {
+    background-color: var(--color-01);
     border-radius: 10rem;
     padding: 0.6rem 0.65rem 0.4rem 0.6rem;
+}
+
+.btn--down {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin-bottom: 1rem;
 }
 
 .btn--hide {
     display: none;
 }
 
+.hide-filters {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .filters-box {
-    background-color: #F27F1B;
+    background-color: var(--color-01);
     height: fit-content;
     width: 100%;
     padding: 1rem 3rem;
 
     position: absolute;
     bottom: 0;
+
+    border-radius: 2rem 2rem 0rem 0rem;
 }
 
 .filters-box--hide{
@@ -84,4 +163,9 @@
 
     position: absolute;
     bottom: 0.5rem;
+}
+
+video {
+    height: 100vh;
+    width: 100vw;
 }
