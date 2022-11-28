@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Filter - App</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/2ab532272c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="splash splash--hide">
+        <p>Change the look on your face.</p>
+        <button class="btn btn--start">Start</button>
+    </div>
+    <div class="filters">
+        <div class="filter-models">
+
+        </div>
+        <div class="show-filters">
+            <button class="btn btn--show-fltrs">
+                <img class="icon" src="./assets/icons/chevron-up-solid.svg" alt="">
+            </button>
+        </div>
+        <div class="filters-box filters-box--hide">
+            <button class="btn">hat</button>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+</html>
