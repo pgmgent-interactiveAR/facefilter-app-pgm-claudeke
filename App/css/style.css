@@ -79,7 +79,7 @@ body {
     z-index: 1;
 
     position: absolute;
-    top: 0;
+    left: 0;
     bottom: 0;
 }
 
@@ -191,7 +191,7 @@ video {
     align-items: center;
 
     height: 3rem;
-    aspect-ratio: 1/1;
+    width: 3rem;
     border-radius: 50%;
     padding: 1rem;
 }
