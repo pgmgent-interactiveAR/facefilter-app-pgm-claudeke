@@ -1,26 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Face Filter - App</title>
     <link rel="stylesheet" href="./css/style.css">
 
-    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
-    <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-face.prod.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-face-aframe.prod.js"></script>
 
     <script src="https://kit.fontawesome.com/2ab532272c.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <a-scene class="ar-filters" mindar-face embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights"
+    vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    <a-assets>
+        <a-asset-item id="glasses" src="./assets/models/glasses.gltf"></a-asset-item>
+        <a-asset-item id="elfsHat" src="./assets/models/elfsHat.gltf"></a-asset-item>
+        <a-asset-item id="santasHat" src="./assets/models/santasHat.gltf"></a-asset-item>
+        <a-asset-item id="mustache" src="./assets/models/mustache.gltf"></a-asset-item>
+        <a-asset-item id="rudolfsNose" src="./assets/models/rudolfsNose.gltf"></a-asset-item>
+        <a-asset-item id="beard" src="./assets/models/beard.gltf"></a-asset-item>
+    </a-assets>
+        <a-camera active="false" position="0 0 0"></a-camera>
+        <a-entity  mindar-face-target="anchorIndex: 151">
+            <a-gltf-model class="m m-shat" rotation="0 0 0" position="0 0 -0.4" scale="0 0 0" src="#santasHat"></a-gltf-model>
+        </a-entity>
+        <a-entity  mindar-face-target="anchorIndex: 18">
+            <a-gltf-model class="m m-beard" rotation="0 0 0" position="0 0 0" scale="0 0 0" src="#beard"></a-gltf-model>
+        </a-entity>
+        <a-entity  mindar-face-target="anchorIndex: 151">
+            <a-gltf-model class="m m-ehat" rotation="0 0 0" position="0 0 -0.4" scale="0 0 0" src="#elfsHat"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 6">
+            <a-gltf-model class="m m-glasses" rotation="0 0 0" position="0 0 0" scale="0 0 0" src="#glasses"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 164">
+            <a-gltf-model class="m m-mustache" rotation="0 0 0" position="0 0 0" scale="0 0 0" src="#mustache"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 4">
+            <a-gltf-model class="m m-nose" rotation="0 0 0" position="0 0 0" scale="0 0 0" src="#rudolfsNose"></a-gltf-model>
+        </a-entity>
+    </a-scene>
+
     <div class="splash">
         <p>Get that christmas look!</p>
         <button class="btn btn--start">Start</button>
     </div>
     <div class="filters filters--hide">
-
         <div class="show-filters">
             <button class="btn btn--up">
                 <img class="icon" src="./assets/icons/chevron-up-solid.svg" alt="">
@@ -33,15 +60,17 @@
                 </button>
             </div>
             <div class="btns">
-                <button class="btn">santa's</button>
-                <button class="btn">elf's</button>
-                <button class="btn">moustache</button>
-                <button class="btn">beard</button>
-                <button class="btn">rudolf's</button>
+                <button class="btn btn--filter" value="m-shat">Santa's hat</button>
+                <button class="btn btn--filter" value="m-ehat">Elf's hat</button>
+                <button class="btn btn--filter" value="m-mustache">Moustache</button>
+                <button class="btn btn--filter" value="m-beard">Beard</button>
+                <button class="btn btn--filter" value="m-glasses">Glasses</button>
+                <button class="btn btn--filter" value="m-nose">Rudolf's nose</button>
             </div>
         </div>
     </div>
 
     <script src="./js/main.js"></script>
+
 </body>
 </html>
