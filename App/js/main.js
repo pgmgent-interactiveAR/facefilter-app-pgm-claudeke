@@ -15,6 +15,7 @@
             this.$showFiltersBtn = document.querySelector('.btn--up');
             this.$filtersBox = document.querySelector('.filters-box');
             this.$hideFiltersBtn = document.querySelector('.btn--down');
+            this.$instructionOne = document.querySelector('.instruction__one');
 
             this.$filterBtns = document.querySelectorAll('.btn--filter');
 
@@ -30,6 +31,7 @@
             this.$showFiltersBtn.addEventListener('click', (ev) => {
                 this.$filtersBox.classList.remove('filters-box--hide');
                 this.$showFiltersBtn.classList.add('btn--hide');
+                this.$instructionOne.classList.add('hide');
             })
         },
         hideFilter() {
