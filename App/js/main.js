@@ -115,7 +115,7 @@
             } else if(model.classList.contains('m-beard')) {
                 model.setAttribute('animation', { 'property': 'scale',
                 'to': {
-                    x: 0.004,
+                    x: 0.0035,
                     y: 0.004,
                     z: 0.004
                 },
