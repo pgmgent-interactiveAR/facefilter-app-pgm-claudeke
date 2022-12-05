@@ -27,7 +27,7 @@
                 this.$filtersPage.classList.remove('filters--hide');
             });
         },
-        showFilters() {mustache
+        showFilters() {
             this.$showFiltersBtn.addEventListener('click', (ev) => {
                 this.$filtersBox.classList.remove('filters-box--hide');
                 this.$showFiltersBtn.classList.add('btn--hide');
@@ -43,7 +43,6 @@
         selectFilter() {
             this.$filterBtns.forEach(btn => {
                 this.selectFilterFunction(btn);
-                
             });
 
         },
@@ -71,7 +70,6 @@
             });
         },
         setScaling(model) {
-           
             if (model.classList.contains('m-glasses')) {
                 model.setAttribute('animation', { 'property': 'scale',
                 'to': {
