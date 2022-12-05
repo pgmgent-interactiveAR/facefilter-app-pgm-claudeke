@@ -70,7 +70,7 @@
             });
         },
         setScaling(model) {
-            if (model.classList.contains('m-glasses')) {
+            if (model.dataset.model === 'm-glasses') {
                 model.setAttribute('animation', { 'property': 'scale',
                 'to': {
                     x: 0.04,
@@ -80,7 +80,7 @@
                 'dur': 300,
                 'startEvents': 'startanim001',
                 });
-            } else if (model.classList.contains('m-shat') || model.classList.contains('m-ehat')) {
+            } else if (model.dataset.model === 'm-shat' || model.dataset.model === 'm-ehat') {
                 model.setAttribute('animation', { 'property': 'scale',
                 'to': {
                     x: 0.125,
@@ -90,7 +90,7 @@
                 'dur': 300,
                 'startEvents': 'startanim001',
                 });
-            } else if(model.classList.contains('m-mustache')) {
+            } else if(model.dataset.model === 'm-mustache') {
                 model.setAttribute('animation', { 'property': 'scale',
                 'to': {
                     x: 0.01,
@@ -100,7 +100,7 @@
                 'dur': 300,
                 'startEvents': 'startanim001',
                 });
-            } else if(model.classList.contains('m-nose')) {
+            } else if(model.dataset.model === 'm-nose') {
                 model.setAttribute('animation', { 'property': 'scale',
                 'to': {
                     x: 0.07,
@@ -110,7 +110,7 @@
                 'dur': 300,
                 'startEvents': 'startanim001',
                 });
-            } else if(model.classList.contains('m-beard')) {
+            } else if(model.dataset.model === 'm-beard') {
                 model.setAttribute('animation', { 'property': 'scale',
                 'to': {
                     x: 0.0035,
