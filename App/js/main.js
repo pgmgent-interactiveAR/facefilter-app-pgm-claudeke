@@ -19,6 +19,9 @@
 
             this.$filterBtns = document.querySelectorAll('.btn--filter');
 
+            this.$btnEhat = document.querySelector('.m-ehat');
+            this.$btnShat = document.querySelector('.m-shat');
+
             this.$allModels = document.querySelectorAll('.m');
         },
         splashToFilter() {
